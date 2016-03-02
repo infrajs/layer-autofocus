@@ -1,7 +1,5 @@
 {
 	"name": "infrajs/layer-autofocus",
-	"license": "GPL3",
-	"autoload": {
-		"psr-4": { "infrajs\\layer\\autofocus\\": "/" }
-	}
+	"homepage":"https://github.com/infrajs/layer-autfocus",
+	"license": "GPL3"
 }
