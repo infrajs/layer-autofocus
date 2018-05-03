@@ -29,13 +29,20 @@ infrajs.autofocus=function(layer){//onshow
 
 	if(layer.autofocuswas){
 		var inp=div.find('[name="'+layer.autofocuswas+'"]');
-		
-	}else{
-		var inp=$('[autofocus]:first');
+	} else {
+		var inp = $('[autofocus]:first');
 		if (!inp.length) {
-			var inp=div.find('input:first[value=""][type=text]'); //На первый пустой инпут
+			var inp = div.find('input:first[value=""][type=text]'); //На первый пустой инпут
+			if(!inp.length){
+				var inp = div.find('input:first[value=""][type=number]'); //На первый пустой инпут
+			} else {
+
+			}
 			if(!inp.length){
 				var inp=div.find('input:first[type=text]');
+			}
+			if(!inp.length){
+				var inp=div.find('input:first[type=number]');
 			}
 		}
 	}
@@ -45,7 +52,7 @@ infrajs.autofocus=function(layer){//onshow
 		infrajs.autofocus_moveCaretToEnd(inp.get(0));
 	}
 }
-infrajs.autofocussave=function(layer){//oncheck
+infrajs.autofocussave = function(layer){//oncheck
 	//autofocus
 	if(!layer.autofocus)return;
 	if(!layer.showed)return;
