@@ -14,7 +14,9 @@ infrajs.autofocus_moveCaretToEnd=function(inp){
 		}
 	}catch(e){}
 }
-infrajs.autofocus=function(layer){//onshow
+infrajs.autofocus = async function (layer) {//onshow
+	let CDN = (await import('/vendor/akiyatkin/load/CDN.js')).default
+	await CDN.load('jquery')
 	if( typeof(layer)=='string' ) {
 		var div=$(layer);
 		var layer={};
