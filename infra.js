@@ -1,6 +1,5 @@
-Event.handler('Layer.oncheck', function (layer) {
-	infrajs.autofocussave(layer);
-});
-Event.handler('Layer.onshow', function (layer) {
-	infrajs.autofocus(layer);
-});
+import { Controller } from '/vendor/infrajs/controller/src/Controller.js'
+
+Controller.hand('init', async () => {
+	await import('./init.js')
+})
